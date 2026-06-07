@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe's Shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style type="text/tailwindcss">
+        @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <aside
+        class="w-full bg-white/95 top-0 left-0 fixed z-50 flex items-center border-b border-red-100 shadow-sm">
+        <nav class="max-w-7xl w-full min-h-[72px] mx-auto justify-between items-center flex px-5 md:px-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-clifford">SoleStyle</h1>
+            <div class="items-center hidden justify-center lg:flex gap-6">
+                <ul class="flex justify-center items-center mt-1 text-sm font-medium text-gray-500 gap-8">
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="Home.html">Home</a>
+                    </li>
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="Services.html">Services</a></li>
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="About.html">About</a></li>
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="Contact.html">Contact</a></li>
+                </ul>
+                <div class="site-search relative w-72 ml-auto">
+                    <input type="text" placeholder="Search..."
+                        class="site-search-input w-full px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-red-100 bg-gray-100 border border-transparent focus:border-red-200 rounded-md">
+                    <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <div class="search-results hidden absolute top-full left-0 mt-2 w-full bg-white border border-red-100 shadow-lg rounded-md overflow-hidden z-[70]"></div>
+                </div>
+                <button type="button" class="shop-btn flex items-center relative bg-transparent border-0 p-0 cursor-pointer" aria-label="Open cart products" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping text-red-500 text-2xl"></i>
+                    <h1
+                        class="bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 absolute rounded-full">
+                        4</h1>
+                </button>
+                <a href="../Components/Login.html" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">Log In</a>
+            </div>
+            <div class="flex lg:hidden items-center gap-7">
+                <div class="site-search relative hidden md:block w-72 ml-auto">
+                    <input type="text" placeholder="Search..."
+                        class="site-search-input w-full px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-red-100 bg-gray-100 border border-transparent focus:border-red-200 rounded-md">
+                    <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <div class="search-results hidden absolute top-full left-0 mt-2 w-full bg-white border border-red-100 shadow-lg rounded-md overflow-hidden z-[70]"></div>
+                </div>
+                <button type="button" class="shop-btn flex items-center relative bg-transparent border-0 p-0 cursor-pointer" aria-label="Open cart products" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping text-red-500 text-2xl"></i>
+                    <h1
+                        class="bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 cursor-default absolute rounded-full">
+                        4</h1>
+                </button>
+                <i id="menu-btn" class="fa-solid fa-bars text-3xl cursor-pointer"></i>
+            </div>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <div id="mobile-menu" class="fixed hidden top-0 left-0 z-[60] w-[80%] max-w-xs h-screen bg-white shadow-lg">
+        <div class="p-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-clifford">
+                    SoleStyle
+                </h1>
+
+                <i id="close" class="fa-solid fa-xmark text-gray-700 hover:text-gray-500 text-2xl cursor-pointer"></i>
+            </div>
+
+            <hr class="my-4 border-red-200">
+
+            <ul class="flex flex-col gap-2">
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="Home.html">Home</a>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-cogs"></i>
+                    <a href="Services.html">Services</a>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-info-circle"></i>
+                    <a href="About.html">About</a>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="Contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <a href="../Components/Login.html" class="block w-full mt-6 bg-blue-500 text-center text-white py-2 rounded-lg hover:bg-blue-600">
+                Log In
+            </a>
+
+        </div>
+    </div>
+
+    <div id="shop-category-bar" class="fixed hidden top-0 right-0 z-[60] h-screen w-full sm:w-[92%] md:max-w-2xl bg-white shadow-lg overflow-y-auto">
+        <div class="p-4 sm:p-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-clifford">My Products</h1>
+                    <p class="text-sm text-gray-500">Items added by user</p>
+                </div>
+                <i id="shop-close" class="fa-solid fa-xmark text-gray-700 hover:text-gray-500 text-2xl cursor-pointer"></i>
+            </div>
+
+            <hr class="my-4 border-red-200">
+
+            <div class="hidden md:grid grid-cols-[70px_1fr_90px_90px_120px] gap-3 px-3 py-2 text-xs font-bold uppercase text-gray-500">
+                <span>ID</span>
+                <span>Product</span>
+                <span>Amount</span>
+                <span>Price</span>
+                <span>Actions</span>
+            </div>
+
+            <div class="space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
+                    <p class="text-sm font-bold text-gray-600">#P001</p>
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img src="https://i.pinimg.com/1200x/18/04/e2/1804e2725910144b0ff2baff0b7d6815.jpg" alt="Cloud Runner Pro-X" class="h-16 w-16 rounded-md object-cover">
+                        <div class="min-w-0">
+                            <h2 class="font-bold text-gray-900 truncate">Cloud Runner Pro-X</h2>
+                            <p class="text-xs text-gray-500">Featured Shoe</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button>
+                        <span class="w-8 text-center font-bold">1</span>
+                        <button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button>
+                    </div>
+                    <p class="font-bold text-orange-600">$280.00</p>
+                    <div class="flex gap-2">
+                        <a href="Home.html" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a>
+                        <button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
+                    <p class="text-sm font-bold text-gray-600">#P002</p>
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Hype Revival" class="h-16 w-16 rounded-md object-cover">
+                        <div class="min-w-0">
+                            <h2 class="font-bold text-gray-900 truncate">Hype Revival</h2>
+                            <p class="text-xs text-gray-500">Trending</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button>
+                        <span class="w-8 text-center font-bold">2</span>
+                        <button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button>
+                    </div>
+                    <p class="font-bold text-orange-600">$170.00</p>
+                    <div class="flex gap-2">
+                        <a href="Detail_card.html?service=hype-revival" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a>
+                        <button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
+                    <p class="text-sm font-bold text-gray-600">#P003</p>
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80" alt="Fresh Shield" class="h-16 w-16 rounded-md object-cover">
+                        <div class="min-w-0">
+                            <h2 class="font-bold text-gray-900 truncate">Fresh Shield</h2>
+                            <p class="text-xs text-gray-500">New</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button>
+                        <span class="w-8 text-center font-bold">1</span>
+                        <button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button>
+                    </div>
+                    <p class="font-bold text-orange-600">$35.00</p>
+                    <div class="flex gap-2">
+                        <a href="Detail_card.html?service=fresh-shield" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a>
+                        <button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 rounded-lg bg-gray-50 p-4">
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>Total items</span>
+                    <span class="font-bold text-gray-900">4</span>
+                </div>
+                <div class="mt-2 flex justify-between text-lg font-bold">
+                    <span>Total</span>
+                    <span class="text-orange-600">$485.00</span>
+                </div>
+                <a href="Services.html" class="mt-4 block w-full rounded-md bg-red-500 py-3 text-center font-bold text-white hover:bg-red-600">View More Products</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-[72px] bg-[#f7f8fc] text-gray-950">
+        <!-- Hero -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <span class="inline-block bg-gray-950 px-3 py-1 text-[11px] font-bold uppercase text-white">
+                        Professional Care
+                    </span>
+                    <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Elevate Your <br>
+                        Rotation.
+                    </h1>
+                    <p class="mt-6 max-w-xl text-sm md:text-base leading-7 text-gray-600">
+                        From deep industrial cleaning to bespoke artistic redesigns. We treat your footwear with
+                        technical precision and artisanal passion.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="About.html"
+                            class="inline-flex justify-center bg-orange-600 px-6 py-3 text-xs font-bold uppercase tracking-wide text-white hover:bg-red-600">
+                            Learn More
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1607861716497-e65ab29fc7ac?auto=format&fit=crop&w=1000&q=80"
+                    alt="Sneaker cleaning and restoration workbench"
+                    class="w-full aspect-[5/4] object-cover shadow-xl">
+            </div>
+        </section>
+
+        <!-- Service Cards -->
+        <section class="bg-white py-16 md:py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-orange-600">Service Options</p>
+                        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Choose Your Sneaker Care</h2>
+                        <p class="mt-4 max-w-2xl text-sm leading-7 text-gray-600">
+                            Explore our curated service cards by style, release type, and restoration approach.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3" id="service-filters">
+                        <button data-filter="all"
+                            class="filter-btn bg-gray-950 px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white">
+                            All
+                        </button>
+                        <button data-filter="modern"
+                            class="filter-btn border border-gray-300 px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-gray-700 hover:border-orange-600 hover:text-orange-600">
+                            Modern
+                        </button>
+                        <button data-filter="tranding"
+                            class="filter-btn border border-gray-300 px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-gray-700 hover:border-orange-600 hover:text-orange-600">
+                            Tranding
+                        </button>
+                        <button data-filter="new"
+                            class="filter-btn border border-gray-300 px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-gray-700 hover:border-orange-600 hover:text-orange-600">
+                            New
+                        </button>
+                    </div>
+                </div>
+
+                <div id="service-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <article data-category="modern" data-service="modern-clean"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-gray-950 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                Modern
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=700&q=80"
+                                alt="Modern sneaker cleaning"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Modern Clean</h3>
+                            <p class="mt-2 text-sm text-gray-600">Daily-wear reset for mesh, knit, and synthetic builds.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$45</p>
+                                <a href="Detail_card.html?service=modern-clean" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="tranding" data-service="hype-revival"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-orange-600 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                Tranding
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+                                alt="Trending sneaker restoration"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Hype Revival</h3>
+                            <p class="mt-2 text-sm text-gray-600">Premium detail care for statement pairs and rare drops.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$85</p>
+                                <a href="Detail_card.html?service=hype-revival" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="new" data-service="fresh-shield"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-blue-700 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                New
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80"
+                                alt="New sneaker protection service"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Fresh Shield</h3>
+                            <p class="mt-2 text-sm text-gray-600">Protective finish for new pairs before their first wear.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$35</p>
+                                <a href="Detail_card.html?service=fresh-shield" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="modern" data-service="archive-reset"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-gray-950 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                Modern
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=700&q=80"
+                                alt="Complete sneaker restoration service"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Archive Reset</h3>
+                            <p class="mt-2 text-sm text-gray-600">Full restoration for classics, suede, nubuck, and leather.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$140</p>
+                                <a href="Detail_card.html?service=archive-reset" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="tranding" data-service="street-detail"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-orange-600 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                Tranding
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80"
+                                alt="Premium sneaker detailing"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Street Detail</h3>
+                            <p class="mt-2 text-sm text-gray-600">A detailed refresh for streetwear rotations and limited pairs.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$75</p>
+                                <a href="Detail_card.html?service=street-detail" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="new" data-service="first-wear-prep"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-blue-700 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                New
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80"
+                                alt="White sneaker protection treatment"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">First Wear Prep</h3>
+                            <p class="mt-2 text-sm text-gray-600">Crease guard setup, lace prep, and stain protection.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$50</p>
+                                <a href="Detail_card.html?service=first-wear-prep" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="modern" data-service="runner-restore"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-gray-950 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                Modern
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=700&q=80"
+                                alt="Modern athletic shoe service"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Runner Restore</h3>
+                            <p class="mt-2 text-sm text-gray-600">Foam-safe care for running shoes and performance trainers.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$65</p>
+                                <a href="Detail_card.html?service=runner-restore" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="tranding" data-service="color-revival"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-orange-600 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                Tranding
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
+                                alt="High demand sneaker repaint service"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Color Revival</h3>
+                            <p class="mt-2 text-sm text-gray-600">Paint correction for faded midsoles, panels, and accents.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$110</p>
+                                <a href="Detail_card.html?service=color-revival" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-category="new" data-service="launch-setup"
+                        class="service-card group border border-gray-200 bg-[#f7f8fc] p-4 hover:border-orange-600">
+                        <div class="relative overflow-hidden bg-white">
+                            <span class="absolute left-3 top-3 z-10 bg-blue-700 px-3 py-1 text-[10px] font-bold uppercase text-white">
+                                New
+                            </span>
+                            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=700&q=80"
+                                alt="New sneaker setup service"
+                                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="pt-5">
+                            <h3 class="text-lg font-bold">Launch Setup</h3>
+                            <p class="mt-2 text-sm text-gray-600">Unbox inspection, fit tuning, and material conditioning.</p>
+                            <div class="mt-5 flex items-center justify-between">
+                                <p class="font-extrabold text-orange-600">$60</p>
+                                <a href="Detail_card.html?service=launch-setup" class="text-xs font-bold uppercase text-gray-950 hover:text-orange-600">Buy Now</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p id="empty-services" class="mt-10 hidden text-center text-sm font-medium text-gray-500">
+                    No services found for this option.
+                </p>
+
+                <div id="see-more-wrap" class="mt-10 flex justify-center">
+                    <button id="see-more-services"
+                        class="inline-flex items-center gap-3 border border-gray-950 px-7 py-3 text-xs font-bold uppercase tracking-wide hover:bg-gray-950 hover:text-white">
+                        See More
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-12
+                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                gap-10">
+            <div>
+                <h1 class="text-3xl font-bold text-red-700 mb-5">
+                    SoleStyle
+                </h1>
+                <p class="text-gray-700 text-sm leading-6 mb-5 max-w-xs">
+                    Defining the future of footwear through premium design and athletic excellence.
+                </p>
+                <div class="flex gap-5 text-gray-800 text-lg">
+                    <i class="fa-solid fa-globe hover:text-red-600 cursor-pointer"></i>
+                    <i class="fa-solid fa-at hover:text-red-600 cursor-pointer"></i>
+                    <i class="fa-solid fa-share-nodes hover:text-red-600 cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase mb-5 text-gray-900">
+                    Quick Links
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li><a href="Home.html" class="hover:text-red-600">Home</a></li>
+                    <li><a href="Home.html" class="hover:text-red-600">Shop</a></li>
+                    <li><a href="About.html" class="hover:text-red-600">About</a></li>
+                    <li><a href="Contact.html" class="hover:text-red-600">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase mb-5 text-gray-900">
+                    Categories
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li><a href="Home.html" class="hover:text-red-600">Men's Sneakers</a></li>
+                    <li><a href="Home.html" class="hover:text-red-600">Women's Collection</a></li>
+                    <li><a href="Services.html" class="hover:text-red-600">Performance Run</a></li>
+                    <li><a href="Home.html" class="hover:text-red-600">Lifestyle Classics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase mb-5 text-gray-900">
+                    Customer Support
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li><a href="Contact.html" class="hover:text-red-600">Privacy Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-red-600">Terms of Service</a></li>
+                    <li><a href="Contact.html" class="hover:text-red-600">Shipping & Returns</a></li>
+                    <li><a href="Contact.html" class="hover:text-red-600">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-red-200 py-5 text-center px-4">
+            <p class="text-sm text-gray-700">
+                &copy; 2024 SoleStyle. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        const linkss = document.querySelectorAll('.bar-link');
+        const currentPage = window.location.pathname.split('/').pop() || 'Home.html';
+
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('text-red-800', 'border-b-2', 'border-b-red-600');
+            }
+        });
+
+        linkss.forEach(link => {
+            const pageLink = link.querySelector('a');
+
+            if (pageLink && pageLink.getAttribute('href') === currentPage) {
+                link.classList.add('text-red-800');
+            }
+        });
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
+        const seeMoreBtn = document.getElementById('see-more-services');
+        const seeMoreWrap = document.getElementById('see-more-wrap');
+        const emptyServices = document.getElementById('empty-services');
+        const initialCardLimit = 6;
+        let activeFilter = 'all';
+        let showAllCards = false;
+
+        function updateServiceCards() {
+            const filteredCards = Array.from(serviceCards).filter(card => {
+                return activeFilter === 'all' || card.dataset.category === activeFilter;
+            });
+
+            serviceCards.forEach(card => card.classList.add('hidden'));
+            emptyServices.classList.toggle('hidden', filteredCards.length !== 0);
+
+            filteredCards.forEach((card, index) => {
+                if (showAllCards || index < initialCardLimit) {
+                    card.classList.remove('hidden');
+                }
+            });
+
+            const hasMoreCards = filteredCards.length > initialCardLimit && !showAllCards;
+
+            if (hasMoreCards) {
+                seeMoreWrap.classList.remove('hidden');
+                seeMoreBtn.innerHTML = 'See More <i class="fa-solid fa-arrow-down"></i>';
+            } else {
+                seeMoreWrap.classList.add('hidden');
+            }
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                showAllCards = false;
+
+                filterButtons.forEach(item => {
+                    item.classList.remove('bg-gray-950', 'text-white');
+                    item.classList.add('border', 'border-gray-300', 'text-gray-700');
+                });
+
+                button.classList.add('bg-gray-950', 'text-white');
+                button.classList.remove('border', 'border-gray-300', 'text-gray-700');
+                updateServiceCards();
+            });
+        });
+
+        seeMoreBtn.addEventListener('click', () => {
+            showAllCards = true;
+            updateServiceCards();
+        });
+
+        updateServiceCards();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const close = document.getElementById('close');
+        const shopBtns = document.querySelectorAll('.shop-btn');
+        const shopCategoryBar = document.getElementById('shop-category-bar');
+        const shopClose = document.getElementById('shop-close');
+        const productSearchItems = [
+            { name: 'Cloud Runner Pro-X', category: 'Featured Shoe', price: '$280.00', href: 'Home.html' },
+            { name: 'Carbon Elite', category: 'Featured Shoe', price: '$210.00', href: 'Home.html' },
+            { name: 'Static Classic', category: 'Featured Shoe', price: '$185.00', href: 'Home.html' },
+            { name: 'Retro Culture', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Tech-Wear', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Minimalist Edit', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Speed Fusion', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Modern Clean', category: 'Modern', price: '$45', href: 'Detail_card.html?service=modern-clean' },
+            { name: 'Hype Revival', category: 'Trending', price: '$85', href: 'Detail_card.html?service=hype-revival' },
+            { name: 'Fresh Shield', category: 'New', price: '$35', href: 'Detail_card.html?service=fresh-shield' },
+            { name: 'Archive Reset', category: 'Modern', price: '$140', href: 'Detail_card.html?service=archive-reset' },
+            { name: 'Street Detail', category: 'Trending', price: '$75', href: 'Detail_card.html?service=street-detail' },
+            { name: 'First Wear Prep', category: 'New', price: '$50', href: 'Detail_card.html?service=first-wear-prep' },
+            { name: 'Runner Restore', category: 'Modern', price: '$65', href: 'Detail_card.html?service=runner-restore' },
+            { name: 'Color Revival', category: 'Trending', price: '$110', href: 'Detail_card.html?service=color-revival' },
+            { name: 'Launch Setup', category: 'New', price: '$60', href: 'Detail_card.html?service=launch-setup' }
+        ];
+
+        document.querySelectorAll('.site-search').forEach(search => {
+            const input = search.querySelector('.site-search-input');
+            const results = search.querySelector('.search-results');
+
+            function showSearchResults() {
+                const query = input.value.trim().toLowerCase();
+                if (!query) {
+                    results.classList.add('hidden');
+                    results.innerHTML = '';
+                    return;
+                }
+
+                const matches = productSearchItems.filter(item =>
+                    `${item.name} ${item.category}`.toLowerCase().includes(query)
+                ).slice(0, 6);
+
+                results.innerHTML = matches.length ? matches.map(item => `
+                    <a href="${item.href}" class="block px-4 py-3 hover:bg-red-50">
+                        <span class="block text-sm font-bold text-gray-900">${item.name}</span>
+                        <span class="block text-xs text-gray-500">${item.category}${item.price ? ' - ' + item.price : ''}</span>
+                    </a>
+                `).join('') : '<p class="px-4 py-3 text-sm text-gray-500">No product found</p>';
+                results.classList.remove('hidden');
+            }
+
+            input.addEventListener('input', showSearchResults);
+            input.addEventListener('focus', showSearchResults);
+            document.addEventListener('click', event => {
+                if (!search.contains(event.target)) {
+                    results.classList.add('hidden');
+                }
+            });
+        });
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            shopCategoryBar.classList.add('hidden');
+        });
+
+        close.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.classList.remove('fa-xmark');
+            menuBtn.classList.add('fa-bars');
+        });
+
+        shopBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                shopCategoryBar.classList.remove('hidden');
+                mobileMenu.classList.add('hidden');
+                shopBtns.forEach(item => item.setAttribute('aria-expanded', 'true'));
+            });
+        });
+
+        shopClose.addEventListener('click', () => {
+            shopCategoryBar.classList.add('hidden');
+            shopBtns.forEach(item => item.setAttribute('aria-expanded', 'false'));
+        });
+    </script>
+</body>
+
+</html>

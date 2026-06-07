@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoleStyle</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #da373d;
+        }
+    </style>
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        .login-input:-webkit-autofill,
+        .login-input:-webkit-autofill:hover,
+        .login-input:-webkit-autofill:focus {
+            background-color: rgba(255, 255, 255, 0.12) !important;
+            -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset !important;
+            -webkit-text-fill-color: #fff !important;
+            caret-color: #fff;
+        }
+
+        .login-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            caret-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="relative min-h-screen flex items-center justify-center px-5 overflow-hidden">
+
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover -z-20">
+            <source src="../Image/246243_medium.mp4" type="video/mp4">
+        </video>
+
+        <div class="w-full max-w-md backdrop-blur-md bg-none border border-white/20 rounded-3xl shadow-2xl p-8 z-10">
+
+            <div class="text-center mb-8">
+
+                <i class="fa-solid fa-shoe-prints text-5xl text-white"></i>
+
+                <h1 class="text-4xl font-bold text-white mt-4">
+                    Welcome Back
+                </h1>
+
+                <p class="text-gray-200 mt-2">
+                    Sign in to your SoleStyle account
+                </p>
+
+            </div>
+
+            <form autocomplete="off" class="space-y-5">
+
+                <!-- Email -->
+                <div class="relative">
+
+                    <input required autocomplete="new-password" name="login-email-no-autofill" readonly
+                        onfocus="this.removeAttribute('readonly')" type="email" placeholder="Enter your email..." class="login-input w-full py-3 px-5 pr-12
+                               rounded-full
+                               bg-white/10
+                               text-white
+                               placeholder:text-white/70
+                               border border-white/40
+                               outline-none
+                               focus:border-white
+                               focus:ring-2 focus:ring-white/20">
+
+                    <i class="fa-solid fa-envelope absolute right-5 top-1/2 -translate-y-1/2 text-white">
+                    </i>
+
+                </div>
+
+                <!-- Password -->
+                <div class="relative">
+
+                    <input type="password" autocomplete="new-password" name="login-password-no-autofill" readonly
+                        onfocus="this.removeAttribute('readonly')" placeholder="Enter your password..." class="login-input w-full py-3 px-5 pr-12 rounded-full
+                               bg-white/10 text-white
+                               placeholder:text-white/70
+                               outline-none
+                               border border-white/40
+                               focus:border-white
+                               focus:ring-2 focus:ring-white/20">
+
+                    <i class="fa-solid fa-lock absolute right-5 top-1/2 -translate-y-1/2 text-white">
+                    </i>
+
+                </div>
+
+                <!-- Remember -->
+                <div class="flex justify-between text-sm text-white">
+
+                    <label class="flex gap-2">
+                        <input type="checkbox">
+                        Remember Me
+                    </label>
+
+                    <a href="#" class="hover:text-red-300">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <!-- Button -->
+                <button class="w-full py-3 rounded-full
+                           bg-red-500
+                           hover:bg-red-600
+                           text-white
+                           font-bold
+                           transition">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <p class="text-center text-white mt-6">
+
+                Don't have an account?
+
+                <a href="Register.html" class=" text-red-500 hover:text-red-200">
+                    Register
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

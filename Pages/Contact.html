@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe's Shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style type="text/tailwindcss">
+        @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <aside
+        class="w-full bg-white/95 top-0 left-0 fixed z-50 flex items-center border-b border-red-100 shadow-sm">
+        <nav class="max-w-7xl w-full min-h-[72px] mx-auto justify-between items-center flex px-5 md:px-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-clifford">SoleStyle</h1>
+            <div class="items-center hidden justify-center lg:flex gap-6">
+                <ul class="flex justify-center items-center mt-1 text-sm font-medium text-gray-500 gap-8">
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="Home.html">Home</a>
+                    </li>
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="Services.html">Services</a></li>
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="About.html">About</a></li>
+                    <li><a class="nav-link border-b-2 border-transparent pb-1 hover:text-red-800 hover:border-b-red-600"
+                            href="Contact.html">Contact</a></li>
+                </ul>
+                <div class="site-search relative w-72 ml-auto">
+                    <input type="text" placeholder="Search..."
+                        class="site-search-input w-full px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-red-100 bg-gray-100 border border-transparent focus:border-red-200 rounded-md">
+                    <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <div class="search-results hidden absolute top-full left-0 mt-2 w-full bg-white border border-red-100 shadow-lg rounded-md overflow-hidden z-[70]"></div>
+                </div>
+                <button type="button" class="shop-btn flex items-center relative bg-transparent border-0 p-0 cursor-pointer" aria-label="Open cart products" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping text-red-500 text-2xl"></i>
+                    <h1
+                        class="bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 absolute rounded-full">
+                        4</h1>
+                </button>
+                <a href="../Components/Login.html" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">Log In</a>
+            </div>
+            <div class="flex lg:hidden items-center gap-7">
+                <div class="site-search relative hidden md:block w-72 ml-auto">
+                    <input type="text" placeholder="Search..."
+                        class="site-search-input w-full px-4 py-2 pr-10 outline-none focus:ring-2 focus:ring-red-100 bg-gray-100 border border-transparent focus:border-red-200 rounded-md">
+                    <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <div class="search-results hidden absolute top-full left-0 mt-2 w-full bg-white border border-red-100 shadow-lg rounded-md overflow-hidden z-[70]"></div>
+                </div>
+                <button type="button" class="shop-btn flex items-center relative bg-transparent border-0 p-0 cursor-pointer" aria-label="Open cart products" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping text-red-500 text-2xl"></i>
+                    <h1
+                        class="bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 cursor-default absolute rounded-full">
+                        4</h1>
+                </button>
+                <i id="menu-btn" class="fa-solid fa-bars text-3xl cursor-pointer"></i>
+            </div>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <div id="mobile-menu" class="fixed hidden top-0 left-0 z-[60] w-[80%] max-w-xs h-screen bg-white shadow-lg">
+        <div class="p-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-clifford">
+                    SoleStyle
+                </h1>
+
+                <i id="close" class="fa-solid fa-xmark text-gray-700 hover:text-gray-500 text-2xl cursor-pointer"></i>
+            </div>
+
+            <hr class="my-4 border-red-200">
+
+            <ul class="flex flex-col gap-2">
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="Home.html">Home</a>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-cogs"></i>
+                    <a href="Services.html">Services</a>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-info-circle"></i>
+                    <a href="About.html">About</a>
+                </li>
+
+                <li
+                    class="flex items-center gap-3 px-3 bar-link py-2 rounded-lg hover:bg-red-50 hover:text-red-600 cursor-pointer">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="Contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <a href="../Components/Login.html" class="block w-full mt-6 bg-blue-500 text-center text-white py-2 rounded-lg hover:bg-blue-600">
+                Log In
+            </a>
+
+        </div>
+    </div>
+
+    <div id="shop-category-bar" class="fixed hidden top-0 right-0 z-[60] h-screen w-full sm:w-[92%] md:max-w-2xl bg-white shadow-lg overflow-y-auto">
+        <div class="p-4 sm:p-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-clifford">My Products</h1>
+                    <p class="text-sm text-gray-500">Items added by user</p>
+                </div>
+                <i id="shop-close" class="fa-solid fa-xmark text-gray-700 hover:text-gray-500 text-2xl cursor-pointer"></i>
+            </div>
+
+            <hr class="my-4 border-red-200">
+
+            <div class="hidden md:grid grid-cols-[70px_1fr_90px_90px_120px] gap-3 px-3 py-2 text-xs font-bold uppercase text-gray-500">
+                <span>ID</span><span>Product</span><span>Amount</span><span>Price</span><span>Actions</span>
+            </div>
+            <div class="space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
+                    <p class="text-sm font-bold text-gray-600">#P001</p>
+                    <div class="flex items-center gap-3 min-w-0"><img src="https://i.pinimg.com/1200x/18/04/e2/1804e2725910144b0ff2baff0b7d6815.jpg" alt="Cloud Runner Pro-X" class="h-16 w-16 rounded-md object-cover"><div class="min-w-0"><h2 class="font-bold text-gray-900 truncate">Cloud Runner Pro-X</h2><p class="text-xs text-gray-500">Featured Shoe</p></div></div>
+                    <div class="flex items-center gap-2"><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button><span class="w-8 text-center font-bold">1</span><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button></div>
+                    <p class="font-bold text-orange-600">$280.00</p>
+                    <div class="flex gap-2"><a href="Home.html" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a><button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
+                    <p class="text-sm font-bold text-gray-600">#P002</p>
+                    <div class="flex items-center gap-3 min-w-0"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Hype Revival" class="h-16 w-16 rounded-md object-cover"><div class="min-w-0"><h2 class="font-bold text-gray-900 truncate">Hype Revival</h2><p class="text-xs text-gray-500">Trending</p></div></div>
+                    <div class="flex items-center gap-2"><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button><span class="w-8 text-center font-bold">2</span><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button></div>
+                    <p class="font-bold text-orange-600">$170.00</p>
+                    <div class="flex gap-2"><a href="Detail_card.html?service=hype-revival" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a><button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
+                    <p class="text-sm font-bold text-gray-600">#P003</p>
+                    <div class="flex items-center gap-3 min-w-0"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80" alt="Fresh Shield" class="h-16 w-16 rounded-md object-cover"><div class="min-w-0"><h2 class="font-bold text-gray-900 truncate">Fresh Shield</h2><p class="text-xs text-gray-500">New</p></div></div>
+                    <div class="flex items-center gap-2"><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button><span class="w-8 text-center font-bold">1</span><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button></div>
+                    <p class="font-bold text-orange-600">$35.00</p>
+                    <div class="flex gap-2"><a href="Detail_card.html?service=fresh-shield" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a><button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button></div>
+                </div>
+            </div>
+            <div class="mt-5 rounded-lg bg-gray-50 p-4">
+                <div class="flex justify-between text-sm text-gray-600"><span>Total items</span><span class="font-bold text-gray-900">4</span></div>
+                <div class="mt-2 flex justify-between text-lg font-bold"><span>Total</span><span class="text-orange-600">$485.00</span></div>
+                <a href="Services.html" class="mt-4 block w-full rounded-md bg-red-500 py-3 text-center font-bold text-white hover:bg-red-600">View More Products</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-[72px] bg-[#f7f8fc] text-gray-950">
+        <!-- Hero -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Let's connect. <br>
+                        <span class="text-red-700">We're here for you.</span>
+                    </h1>
+                    <p class="mt-6 max-w-xl text-sm md:text-base leading-7 text-gray-600">
+                        Whether you have a question about our latest drops, need help with sizing, or just want to talk
+                        footwear, our team is ready to assist.
+                    </p>
+                </div>
+                <img src="https://i.pinimg.com/1200x/72/2e/db/722edb732de89035a45d0e761c3b7a47.jpg"
+                    alt="Minimal sneaker contact display"
+                    class="w-full aspect-[16/10] object-cover rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <!-- Message and Info -->
+        <section class="pb-16 md:pb-24">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-16">
+                <form class="border border-orange-100 bg-white p-6 md:p-10">
+                    <h2 class="text-2xl md:text-3xl font-semibold">Send us a Message</h2>
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <label class="block">
+                            <span class="text-xs font-bold uppercase tracking-wide">Full Name</span>
+                            <input type="text" placeholder="Enter your name"
+                                class="mt-2 w-full border border-orange-100 bg-white px-4 py-3 text-sm outline-none focus:border-orange-500">
+                        </label>
+                        <label class="block">
+                            <span class="text-xs font-bold uppercase tracking-wide">Email Address</span>
+                            <input type="email" placeholder="email@example.com"
+                                class="mt-2 w-full border border-orange-100 bg-white px-4 py-3 text-sm outline-none focus:border-orange-500">
+                        </label>
+                    </div>
+                    <label class="mt-5 block">
+                        <span class="text-xs font-bold uppercase tracking-wide">Subject</span>
+                        <select
+                            class="mt-2 w-full border border-orange-100 bg-white px-4 py-3 text-sm outline-none focus:border-orange-500">
+                            <option>Order Support</option>
+                            <option>Sizing Question</option>
+                            <option>Store Appointment</option>
+                            <option>Custom Project</option>
+                        </select>
+                    </label>
+                    <label class="mt-5 block">
+                        <span class="text-xs font-bold uppercase tracking-wide">Your Message</span>
+                        <textarea rows="6" placeholder="How can we help?"
+                            class="mt-2 w-full resize-none border border-orange-100 bg-white px-4 py-3 text-sm outline-none focus:border-orange-500"></textarea>
+                    </label>
+                    <button class="mt-7 bg-orange-600 px-8 py-3 text-xs font-bold uppercase tracking-wide text-white hover:bg-red-700">
+                        Send Message <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </form>
+
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold">Store Information</h2>
+                    <div class="mt-7 space-y-7">
+                        <div class="flex gap-5">
+                            <div class="h-11 w-11 shrink-0 rounded-full bg-blue-50 text-red-700 flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wide">Flagship Location</h3>
+                                <p class="mt-2 text-sm text-gray-600 leading-6">Royal University of Phnom Penh<br>Phnom Penh, Cambodia
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="h-11 w-11 shrink-0 rounded-full bg-blue-50 text-red-700 flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wide">Phone Support</h3>
+                                <p class="mt-2 text-sm text-gray-600 leading-6">+1 (212) 555-0198<br>Mon-Fri: 9am - 6pm EST
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="h-11 w-11 shrink-0 rounded-full bg-blue-50 text-red-700 flex items-center justify-center">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wide">Email Us</h3>
+                                <p class="mt-2 text-sm text-gray-600 leading-6">concierge@solestyle.com<br>support@solestyle.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-gray-800 p-8 text-white">
+                        <h3 class="text-2xl font-extrabold">Live Support</h3>
+                        <p class="mt-4 text-sm leading-6 text-gray-200">
+                            Our experts are online and ready to chat with you right now for instant assistance.
+                        </p>
+                        <button class="mt-6 border border-white px-6 py-3 text-xs font-bold uppercase hover:bg-white hover:text-gray-800">
+                            Start Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="bg-blue-50 pt-16">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-end pb-10">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-red-700">Visit Us</p>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Find our HQ</h2>
+                </div>
+                <p class="text-sm leading-7 text-gray-600 md:max-w-md md:justify-self-end">
+                    Located at the Royal University of Phnom Penh in Cambodia, our concept store is a hub for footwear
+                    innovation.
+                </p>
+            </div>
+            <div class="relative h-[360px] md:h-[520px] bg-gray-950 overflow-hidden">
+                <iframe
+                    title="Map to SoleStyle flagship location at Royal University of Phnom Penh, Cambodia"
+                    src="https://www.google.com/maps?q=Royal%20University%20of%20Phnom%20Penh%2C%20Cambodia&output=embed"
+                    class="h-full w-full border-0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Retail -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative">
+                    <span class="absolute left-6 top-6 bg-gray-900 px-4 py-2 text-xs font-bold uppercase text-white">
+                        Flagship Store
+                    </span>
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
+                        alt="SoleStyle flagship store interior"
+                        class="w-full aspect-[4/3] object-cover">
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                        The Future <br>
+                        of Retail.
+                    </h2>
+                    <p class="mt-8 text-sm leading-7 text-gray-600">
+                        Experience SoleStyle in person. Our flagship store features a custom tread-mill analysis lab, a
+                        coffee bar, and an exclusive gallery of archives dating back to the start of technical athletics.
+                    </p>
+                    <div class="mt-8 space-y-5">
+                        <div class="flex gap-4">
+                            <i class="fa-regular fa-circle-check mt-1 text-orange-600"></i>
+                            <div>
+                                <h3 class="text-sm font-bold uppercase">Custom Fitting Lab</h3>
+                                <p class="text-sm text-gray-600">Advanced 3D foot scanning for the perfect fit.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fa-regular fa-circle-check mt-1 text-orange-600"></i>
+                            <div>
+                                <h3 class="text-sm font-bold uppercase">Archive Gallery</h3>
+                                <p class="text-sm text-gray-600">A curated museum of iconic sneaker history.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="Contact.html"
+                        class="mt-10 inline-flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-red-700 hover:text-orange-600">
+                        Book a Store Appointment <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-12
+                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                gap-10">
+            <div>
+                <h1 class="text-3xl font-bold text-red-700 mb-5">
+                    SoleStyle
+                </h1>
+                <p class="text-gray-700 text-sm leading-6 mb-5 max-w-xs">
+                    Defining the future of footwear through premium design and athletic excellence.
+                </p>
+                <div class="flex gap-5 text-gray-800 text-lg">
+                    <i class="fa-solid fa-globe hover:text-red-600 cursor-pointer"></i>
+                    <i class="fa-solid fa-at hover:text-red-600 cursor-pointer"></i>
+                    <i class="fa-solid fa-share-nodes hover:text-red-600 cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase mb-5 text-gray-900">
+                    Quick Links
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li><a href="Home.html" class="hover:text-red-600">Home</a></li>
+                    <li><a href="Home.html" class="hover:text-red-600">Shop</a></li>
+                    <li><a href="About.html" class="hover:text-red-600">About</a></li>
+                    <li><a href="Contact.html" class="hover:text-red-600">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase mb-5 text-gray-900">
+                    Categories
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li><a href="Home.html" class="hover:text-red-600">Men's Sneakers</a></li>
+                    <li><a href="Home.html" class="hover:text-red-600">Women's Collection</a></li>
+                    <li><a href="Services.html" class="hover:text-red-600">Performance Run</a></li>
+                    <li><a href="Home.html" class="hover:text-red-600">Lifestyle Classics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-sm font-bold uppercase mb-5 text-gray-900">
+                    Customer Support
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li><a href="Contact.html" class="hover:text-red-600">Privacy Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-red-600">Terms of Service</a></li>
+                    <li><a href="Contact.html" class="hover:text-red-600">Shipping & Returns</a></li>
+                    <li><a href="Contact.html" class="hover:text-red-600">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-red-200 py-5 text-center px-4">
+            <p class="text-sm text-gray-700">
+                &copy; 2024 SoleStyle. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        const linkss = document.querySelectorAll('.bar-link');
+        const currentPage = window.location.pathname.split('/').pop() || 'Home.html';
+
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('text-red-800', 'border-b-2', 'border-b-red-600');
+            }
+        });
+
+        linkss.forEach(link => {
+            const pageLink = link.querySelector('a');
+
+            if (pageLink && pageLink.getAttribute('href') === currentPage) {
+                link.classList.add('text-red-800');
+            }
+        });
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const close = document.getElementById('close');
+        const shopBtns = document.querySelectorAll('.shop-btn');
+        const shopCategoryBar = document.getElementById('shop-category-bar');
+        const shopClose = document.getElementById('shop-close');
+        const productSearchItems = [
+            { name: 'Cloud Runner Pro-X', category: 'Featured Shoe', price: '$280.00', href: 'Home.html' },
+            { name: 'Carbon Elite', category: 'Featured Shoe', price: '$210.00', href: 'Home.html' },
+            { name: 'Static Classic', category: 'Featured Shoe', price: '$185.00', href: 'Home.html' },
+            { name: 'Retro Culture', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Tech-Wear', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Minimalist Edit', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Speed Fusion', category: 'Trending Shoe', price: '', href: 'Home.html' },
+            { name: 'Modern Clean', category: 'Modern', price: '$45', href: 'Detail_card.html?service=modern-clean' },
+            { name: 'Hype Revival', category: 'Trending', price: '$85', href: 'Detail_card.html?service=hype-revival' },
+            { name: 'Fresh Shield', category: 'New', price: '$35', href: 'Detail_card.html?service=fresh-shield' },
+            { name: 'Archive Reset', category: 'Modern', price: '$140', href: 'Detail_card.html?service=archive-reset' },
+            { name: 'Street Detail', category: 'Trending', price: '$75', href: 'Detail_card.html?service=street-detail' },
+            { name: 'First Wear Prep', category: 'New', price: '$50', href: 'Detail_card.html?service=first-wear-prep' },
+            { name: 'Runner Restore', category: 'Modern', price: '$65', href: 'Detail_card.html?service=runner-restore' },
+            { name: 'Color Revival', category: 'Trending', price: '$110', href: 'Detail_card.html?service=color-revival' },
+            { name: 'Launch Setup', category: 'New', price: '$60', href: 'Detail_card.html?service=launch-setup' }
+        ];
+
+        document.querySelectorAll('.site-search').forEach(search => {
+            const input = search.querySelector('.site-search-input');
+            const results = search.querySelector('.search-results');
+
+            function showSearchResults() {
+                const query = input.value.trim().toLowerCase();
+                if (!query) {
+                    results.classList.add('hidden');
+                    results.innerHTML = '';
+                    return;
+                }
+
+                const matches = productSearchItems.filter(item =>
+                    `${item.name} ${item.category}`.toLowerCase().includes(query)
+                ).slice(0, 6);
+
+                results.innerHTML = matches.length ? matches.map(item => `
+                    <a href="${item.href}" class="block px-4 py-3 hover:bg-red-50">
+                        <span class="block text-sm font-bold text-gray-900">${item.name}</span>
+                        <span class="block text-xs text-gray-500">${item.category}${item.price ? ' - ' + item.price : ''}</span>
+                    </a>
+                `).join('') : '<p class="px-4 py-3 text-sm text-gray-500">No product found</p>';
+                results.classList.remove('hidden');
+            }
+
+            input.addEventListener('input', showSearchResults);
+            input.addEventListener('focus', showSearchResults);
+            document.addEventListener('click', event => {
+                if (!search.contains(event.target)) {
+                    results.classList.add('hidden');
+                }
+            });
+        });
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            shopCategoryBar.classList.add('hidden');
+        });
+
+        close.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.classList.remove('fa-xmark');
+            menuBtn.classList.add('fa-bars');
+        });
+
+        shopBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                shopCategoryBar.classList.remove('hidden');
+                mobileMenu.classList.add('hidden');
+                shopBtns.forEach(item => item.setAttribute('aria-expanded', 'true'));
+            });
+        });
+
+        shopClose.addEventListener('click', () => {
+            shopCategoryBar.classList.add('hidden');
+            shopBtns.forEach(item => item.setAttribute('aria-expanded', 'false'));
+        });
+    </script>
+</body>
+
+</html>
