@@ -50,8 +50,8 @@
                 <button type="button" class="shop-btn flex items-center relative bg-transparent border-0 p-0 cursor-pointer" aria-label="Open cart products" aria-expanded="false">
                     <i class="fa-solid fa-bag-shopping text-red-500 text-2xl"></i>
                     <h1
-                        class="bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 absolute rounded-full">
-                        4</h1>
+                        class="cart-count hidden bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 absolute rounded-full">
+                        0</h1>
                 </button>
                 <a href="../Components/Login.html" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">Log In</a>
             </div>
@@ -65,8 +65,8 @@
                 <button type="button" class="shop-btn flex items-center relative bg-transparent border-0 p-0 cursor-pointer" aria-label="Open cart products" aria-expanded="false">
                     <i class="fa-solid fa-bag-shopping text-red-500 text-2xl"></i>
                     <h1
-                        class="bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 cursor-default absolute rounded-full">
-                        4</h1>
+                        class="cart-count hidden bg-orange-500 font-medium text-xs w-5 h-5 text-center leading-5 text-white -right-2 -top-2 cursor-default absolute rounded-full">
+                        0</h1>
                 </button>
                 <i id="menu-btn" class="fa-solid fa-bars text-3xl cursor-pointer"></i>
             </div>
@@ -119,33 +119,15 @@
             <div class="hidden md:grid grid-cols-[70px_1fr_90px_90px_120px] gap-3 px-3 py-2 text-xs font-bold uppercase text-gray-500">
                 <span>ID</span><span>Product</span><span>Amount</span><span>Price</span><span>Actions</span>
             </div>
-            <div class="space-y-3">
-                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
-                    <p class="text-sm font-bold text-gray-600">#P001</p>
-                    <div class="flex items-center gap-3 min-w-0"><img src="https://i.pinimg.com/1200x/18/04/e2/1804e2725910144b0ff2baff0b7d6815.jpg" alt="Cloud Runner Pro-X" class="h-16 w-16 rounded-md object-cover"><div class="min-w-0"><h2 class="font-bold text-gray-900 truncate">Cloud Runner Pro-X</h2><p class="text-xs text-gray-500">Featured Shoe</p></div></div>
-                    <div class="flex items-center gap-2"><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button><span class="w-8 text-center font-bold">1</span><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button></div>
-                    <p class="font-bold text-orange-600">$280.00</p>
-                    <div class="flex gap-2"><a href="Home.html" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a><button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
-                    <p class="text-sm font-bold text-gray-600">#P002</p>
-                    <div class="flex items-center gap-3 min-w-0"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Hype Revival" class="h-16 w-16 rounded-md object-cover"><div class="min-w-0"><h2 class="font-bold text-gray-900 truncate">Hype Revival</h2><p class="text-xs text-gray-500">Trending</p></div></div>
-                    <div class="flex items-center gap-2"><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button><span class="w-8 text-center font-bold">2</span><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button></div>
-                    <p class="font-bold text-orange-600">$170.00</p>
-                    <div class="flex gap-2"><a href="Detail_card.html?service=hype-revival" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a><button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-[70px_1fr_90px_90px_120px] gap-3 items-start md:items-center rounded-lg border border-red-100 p-3">
-                    <p class="text-sm font-bold text-gray-600">#P003</p>
-                    <div class="flex items-center gap-3 min-w-0"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80" alt="Fresh Shield" class="h-16 w-16 rounded-md object-cover"><div class="min-w-0"><h2 class="font-bold text-gray-900 truncate">Fresh Shield</h2><p class="text-xs text-gray-500">New</p></div></div>
-                    <div class="flex items-center gap-2"><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Decrease amount">-</button><span class="w-8 text-center font-bold">1</span><button class="h-8 w-8 rounded border border-gray-200 hover:bg-red-50" aria-label="Increase amount">+</button></div>
-                    <p class="font-bold text-orange-600">$35.00</p>
-                    <div class="flex gap-2"><a href="Detail_card.html?service=fresh-shield" class="h-9 w-9 rounded bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100" aria-label="View product"><i class="fa-solid fa-eye"></i></a><button class="h-9 w-9 rounded bg-red-50 text-red-600 hover:bg-red-100" aria-label="Remove product"><i class="fa-solid fa-trash"></i></button></div>
-                </div>
+            <div id="empty-cart-message" class="rounded-lg border border-dashed border-red-200 bg-red-50/40 p-6 text-center text-sm text-gray-500">
+                Your cart is empty.
             </div>
-            <div class="mt-5 rounded-lg bg-gray-50 p-4">
-                <div class="flex justify-between text-sm text-gray-600"><span>Total items</span><span class="font-bold text-gray-900">4</span></div>
-                <div class="mt-2 flex justify-between text-lg font-bold"><span>Total</span><span class="text-orange-600">$485.00</span></div>
-                <a href="Services.html" class="mt-4 block w-full rounded-md bg-red-500 py-3 text-center font-bold text-white hover:bg-red-600">View More Products</a>
+            <div id="cart-items" class="space-y-3"></div>
+            <div id="cart-summary" class="hidden mt-5 rounded-lg bg-gray-50 p-4">
+                <div class="flex justify-between text-sm text-gray-600"><span>Total items</span><span id="cart-total-items" class="font-bold text-gray-900">0</span></div>
+                <div class="mt-2 flex justify-between text-lg font-bold"><span>Total</span><span id="cart-total-price" class="text-orange-600">$0.00</span></div>
+                <button id="order-btn" type="button" class="mt-4 block w-full rounded-md bg-red-500 py-3 text-center font-bold text-white hover:bg-red-600">Order Now</button>
+                <a href="Services.html" class="mt-3 block w-full rounded-md border border-red-200 py-3 text-center font-bold text-red-600 hover:bg-red-50">View More Products</a>
             </div>
         </div>
     </div>
@@ -200,10 +182,10 @@
                     </div>
 
                     <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                        <a href="Contact.html"
-                            class="inline-flex justify-center bg-orange-600 px-8 py-3 text-xs font-bold uppercase tracking-wide text-white hover:bg-red-600">
-                            Book This Service
-                        </a>
+                        <button id="add-to-cart-btn" type="button"
+                            class="inline-flex justify-center bg-orange-600 px-8 py-3 text-xs font-bold tracking-wide text-white hover:bg-red-600">
+                            Add To Card
+                        </button>
                         <a href="Services.html"
                             class="inline-flex justify-center border border-gray-950 px-8 py-3 text-xs font-bold uppercase tracking-wide hover:bg-gray-950 hover:text-white">
                             Compare Services
@@ -363,6 +345,60 @@
                 image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=900&q=80',
                 description: 'Unbox inspection, fit tuning, and material conditioning for new-release pairs.',
                 features: ['Unbox inspection', 'Material conditioning', 'Fit tuning', 'Lace adjustment', 'Protection finish']
+            },
+            'sole-bright': {
+                title: 'Sole Bright',
+                category: 'Modern',
+                price: '$55',
+                time: '48h',
+                image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=900&q=80',
+                description: 'Focused midsole whitening and outsole stain removal for pairs that still look good up top but need a cleaner base.',
+                features: ['Midsole stain lifting', 'Outsole scrub', 'Edge detailing', 'Foam-safe brightening', 'Final sole seal']
+            },
+            'suede-rescue': {
+                title: 'Suede Rescue',
+                category: 'Tranding',
+                price: '$95',
+                time: '72h',
+                image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=900&q=80',
+                description: 'Texture reset and spot cleaning for suede and nubuck pairs that need careful material handling.',
+                features: ['Dry brush reset', 'Spot stain treatment', 'Nap lifting', 'Color-safe cleaning', 'Suede protection finish']
+            },
+            'lace-refresh': {
+                title: 'Lace Refresh',
+                category: 'New',
+                price: '$25',
+                time: '24h',
+                image: 'https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=900&q=80',
+                description: 'Lace wash, swap options, and clean re-lacing for pairs that need a quick visible refresh.',
+                features: ['Lace removal', 'Deep lace wash', 'Optional lace swap', 'Eyelet wipe down', 'Clean re-lacing']
+            },
+            'odor-control': {
+                title: 'Odor Control',
+                category: 'Modern',
+                price: '$40',
+                time: '24h',
+                image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=80',
+                description: 'Interior cleaning and deodorizing for daily-wear sneakers, gym pairs, and performance shoes.',
+                features: ['Interior wipe down', 'Insole cleaning', 'Odor neutralizing', 'Air-dry finish', 'Freshness inspection']
+            },
+            'crease-care': {
+                title: 'Crease Care',
+                category: 'Tranding',
+                price: '$70',
+                time: '48h',
+                image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=80',
+                description: 'Toe-box reshaping and crease softening for leather pairs that need a sharper profile.',
+                features: ['Toe-box conditioning', 'Crease softening', 'Shape support', 'Panel wipe down', 'Wear-care guidance']
+            },
+            'travel-pack': {
+                title: 'Travel Pack',
+                category: 'New',
+                price: '$80',
+                time: '48h',
+                image: 'https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=900&q=80',
+                description: 'Pre-trip clean, protection layer, and compact care kit setup for sneakers going on the road.',
+                features: ['Pre-trip cleaning', 'Protection coating', 'Travel care kit', 'Packing advice', 'Quick touch-up guide']
             }
         };
 
@@ -443,7 +479,13 @@
             { name: 'First Wear Prep', category: 'New', price: '$50', href: 'Detail_card.html?service=first-wear-prep' },
             { name: 'Runner Restore', category: 'Modern', price: '$65', href: 'Detail_card.html?service=runner-restore' },
             { name: 'Color Revival', category: 'Trending', price: '$110', href: 'Detail_card.html?service=color-revival' },
-            { name: 'Launch Setup', category: 'New', price: '$60', href: 'Detail_card.html?service=launch-setup' }
+            { name: 'Launch Setup', category: 'New', price: '$60', href: 'Detail_card.html?service=launch-setup' },
+            { name: 'Sole Bright', category: 'Modern', price: '$55', href: 'Detail_card.html?service=sole-bright' },
+            { name: 'Suede Rescue', category: 'Trending', price: '$95', href: 'Detail_card.html?service=suede-rescue' },
+            { name: 'Lace Refresh', category: 'New', price: '$25', href: 'Detail_card.html?service=lace-refresh' },
+            { name: 'Odor Control', category: 'Modern', price: '$40', href: 'Detail_card.html?service=odor-control' },
+            { name: 'Crease Care', category: 'Trending', price: '$70', href: 'Detail_card.html?service=crease-care' },
+            { name: 'Travel Pack', category: 'New', price: '$80', href: 'Detail_card.html?service=travel-pack' }
         ];
 
         document.querySelectorAll('.site-search').forEach(search => {
@@ -503,7 +545,9 @@
             shopCategoryBar.classList.add('hidden');
             shopBtns.forEach(item => item.setAttribute('aria-expanded', 'false'));
         });
+
     </script>
+    <script src="../cart.js"></script>
 </body>
 
 </html>
