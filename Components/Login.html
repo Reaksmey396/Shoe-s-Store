@@ -24,16 +24,55 @@
         .login-input:-webkit-autofill,
         .login-input:-webkit-autofill:hover,
         .login-input:-webkit-autofill:focus {
-            background-color: rgba(255, 255, 255, 0.12) !important;
-            -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset !important;
+            background-color: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            -webkit-background-clip: text !important;
             -webkit-text-fill-color: #fff !important;
             caret-color: #fff;
+            outline: none !important;
         }
 
         .login-input {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: transparent !important;
+            background-image: none !important;
+            background-clip: padding-box;
+            appearance: none;
+            -webkit-appearance: none;
             color: #fff;
             caret-color: #fff;
+        }
+
+        .login-input:focus,
+        .login-input:focus-visible {
+            border-color: #f97316 !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+
+        .login-input:not(:placeholder-shown) {
+            background-color: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+        }
+
+        .login-input:-webkit-autofill,
+        .login-input:-webkit-autofill:hover,
+        .login-input:-webkit-autofill:focus,
+        .login-input:focus:-webkit-autofill,
+        .login-input:focus-visible:-webkit-autofill {
+            background-color: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: #fff !important;
+            border-color: #f97316 !important;
+            outline: none !important;
         }
     </style>
 </head>
@@ -62,21 +101,22 @@
 
             </div>
 
-            <form autocomplete="off" class="space-y-5">
+            <form autocomplete="off" data-form-type="other" class="space-y-5">
 
                 <!-- Email -->
                 <div class="relative">
 
-                    <input required autocomplete="new-password" name="login-email-no-autofill" readonly
-                        onfocus="this.removeAttribute('readonly')" type="email" placeholder="Enter your email..." class="login-input w-full py-3 px-5 pr-12
+                    <input required autocomplete="new-password" name="login-email-no-autofill" readonly data-lpignore="true"
+                        data-1p-ignore="true"
+                        onfocus="this.removeAttribute('readonly')" type="text" inputmode="email" placeholder="Enter your email..." class="login-input w-full py-3 px-5 pr-12
                                rounded-full
-                               bg-white/10
+                               bg-none
                                text-orange-500
                                placeholder:text-orange-300
                                border border-white/40
                                outline-none
                                focus:border-orange-500
-                               focus:ring-2 focus:ring-white/20">
+                               focus:ring-0">
 
                     <i class="fa-solid fa-envelope absolute right-5 top-1/2 -translate-y-1/2 text-white">
                     </i>
@@ -86,14 +126,15 @@
                 <!-- Password -->
                 <div class="relative">
 
-                    <input type="password" autocomplete="new-password" name="login-password-no-autofill" readonly
-                        onfocus="this.removeAttribute('readonly')" placeholder="Enter your password..." class="login-input w-full py-3 px-5 pr-12 rounded-full
-                               bg-white/10 text-white
+                    <input required autocomplete="new-password" name="login-password-no-autofill" readonly data-lpignore="true"
+                        data-1p-ignore="true"
+                        onfocus="this.removeAttribute('readonly')" type="password" placeholder="Enter your password..." class="login-input w-full py-3 px-5 pr-12 rounded-full
+                               bg-none text-white
                                placeholder:text-orange-300
                                outline-none
-                               border border-white
+                               border border-white/40
                                focus:border-orange-500
-                               focus:ring-2 focus:ring-white/20">
+                               focus:ring-0">
 
                     <i class="fa-solid fa-lock absolute right-5 top-1/2 -translate-y-1/2 text-white">
                     </i>
